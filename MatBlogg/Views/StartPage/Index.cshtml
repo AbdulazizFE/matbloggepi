@@ -1,0 +1,19 @@
+@using MatBlogg
+@model PageViewModel<MatBlogg.Models.Pages.StartPage>
+
+
+<div class="container">
+
+    <div class="hidden-tablet hidden-phone saltimage ">
+        @Html.PropertyFor(x => x.CurrentPage.PageImage)
+    </div>
+    <h1 class="jumbotron"  @Html.EditAttributes(m => m.CurrentPage.Heading)>@Model.CurrentPage.Heading</h1>
+  
+    <p class="subHeader" @Html.PropertyFor(x => x.CurrentPage.TeaserText)>@Model.CurrentPage.TeaserText</p>
+    <div class="meals">Chose a meals</div>
+</div>
+
+
+
+
+@Html.PropertyFor(x => x.CurrentPage.MainContentArea, new { CssClass = "row equal-height", tag = Global.ContentAreaTags.FullWidth })
